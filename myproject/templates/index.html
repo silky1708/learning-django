@@ -1,0 +1,23 @@
+{% load static %}
+
+<html>
+    <head><title>Homepage
+    </title></head>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <body>
+        <!-- <h2>What's up, {{name}} ? Are you {{age}} years old? Are you {{nationality}}? </h2> -->
+        <!-- <h3>Input your text below:</h3>
+        <form method="POST" action="counter">
+            {% csrf_token %}
+            <textarea name="words" rows="15" cols="50"></textarea>
+            <br><br>
+            <input type="submit"/>
+        </form> -->
+
+        <!-- {{feature.id}}<br> {{feature.name}}<br> {{feature.details}} -->
+
+        {% for feature in features %}
+        <h1>{{feature.name}}, {{feature.details}}</h1>
+        {% endfor %}
+    </body>
+</html>
