@@ -16,8 +16,21 @@
 
         <!-- {{feature.id}}<br> {{feature.name}}<br> {{feature.details}} -->
 
-        {% for feature in features %}
+        <!-- {% for feature in features %}
         <h1>{{feature.name}}, {{feature.details}}</h1>
-        {% endfor %}
+        {% endfor %} -->
+
+        {% if user.is_authenticated %}
+            <h2>Hello, {{user.username}}!</h2>
+        {% else %}
+            <h2>Hello there!</h2>
+        {% endif %}
+        
+
+        {% if user.is_authenticated %}
+            <a href="logout"><button>Log out</button></a>
+        {% else %}
+            <a href="login"><button>Log In</button></a>
+        {% endif %}
     </body>
 </html>

@@ -1,1 +1,27 @@
-<p>Login Page</p>
+<h2>Login Now</h2>
+
+<style>
+    .error_msg{
+        color: red;
+    }
+</style>
+
+{% for message in messages %}
+<h5 class="error_msg">{{message}}</h5>
+{% endfor %}
+<br>
+<form method="POST" action="login">
+    {% csrf_token %}
+    <br>
+    Username:
+    <br><br>
+    <input type="text" name="username"/>
+
+    <br><br><br><br>
+    Password:
+    <br><br>
+    <input type="password" name="password"/>
+
+    <br><br><br>
+    <input type="submit"/>
+</form>
