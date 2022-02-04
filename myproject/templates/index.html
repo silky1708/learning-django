@@ -20,7 +20,8 @@
         <h1>{{feature.name}}, {{feature.details}}</h1>
         {% endfor %} -->
 
-        {% if user.is_authenticated %}
+        <!-- user authentication: login/logout -->
+        <!-- {% if user.is_authenticated %}
             <h2>Hello, {{user.username}}!</h2>
         {% else %}
             <h2>Hello there!</h2>
@@ -31,6 +32,15 @@
             <a href="logout"><button>Log out</button></a>
         {% else %}
             <a href="login"><button>Log In</button></a>
-        {% endif %}
+        {% endif %} -->
+
+
+        <!-- dynamic url routing -->
+        {% for link in links %}
+            <!-- somehow it works.. -->
+            <!-- <h4><a href=post/{{link}}>Go to {{link}}</a></h4> -->
+            <h4><a href="{% url 'post' link %}">Go to {{link}}</a></h4>
+
+        {% endfor %}
     </body>
 </html>

@@ -18,8 +18,10 @@ def index(request):
     # feature1.details = 'Our service is very quick'
 
     # once added to DB, no need to define them manually
-    features = Feature.objects.all() ## list
-    return render(request, 'index.html', {'features': features})
+    # features = Feature.objects.all() ## list
+
+    links = ['apple', 89, 'banana', 'milkshake']
+    return render(request, 'index.html', {'links': links})
 
 def counter(request):
     words = request.POST['words']
@@ -70,3 +72,6 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return redirect('/')
+
+def post(request, pk):
+    return render(request, 'post.html', {'pk': pk})
