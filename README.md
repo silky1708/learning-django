@@ -2,14 +2,14 @@
 
 
 #### Starting the Django server  
-```python 
+```py 
 python manage.py runserver 
 ```    
 
 
 #### Database  
 
-```python 
+```py 
 python manage.py makemigrations   
 python manage.py migrate 
 ```   
@@ -17,6 +17,6 @@ python manage.py migrate
 
 #### admin credentials  
 
-```python 
+```py 
 python manage.py createsuperuser 
 ```   
