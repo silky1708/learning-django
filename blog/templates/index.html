@@ -1,0 +1,30 @@
+{% csrf_token %}
+<style>
+    .heading{
+        text-align: center;
+    }
+
+    .outside-box{
+        display: flex;
+    }
+    .post{
+        border: black;
+        border-width: 1px;
+        padding: 10px;
+    }
+</style>
+
+<h1 class="heading">Welcome to my blog!</h1>
+<h3 class="heading">Silky Singh</h3>
+
+<div class="outside-box">
+
+{% for post in allPosts reversed %}
+<div class="post">
+    <h3>{{post.title}}</h3>
+    <h5>{{post.created_at}}</h5>
+    <p>{{post.body}}</p>
+</div>
+{% endfor %}
+
+</div>
