@@ -1,5 +1,9 @@
 ## learning-django
 
+#### Creating a new project 
+```py
+django-admin startproject <project name>
+```
 
 #### Starting the Django server  
 ```py 
