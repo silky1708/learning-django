@@ -12,19 +12,31 @@
         border-width: 1px;
         padding: 10px;
     }
+
+    .links{
+        color: black;
+        text-decoration: none;
+    }
+
+    .links:hover{
+        color: red;
+    }
 </style>
 
 <h1 class="heading">Welcome to my blog!</h1>
 <h3 class="heading">Silky Singh</h3>
 
 <div class="outside-box">
+    
+    {% for post in allPosts reversed %}
+    <div class="post">
+        <a href="posts/{{post.id}}" class="links">
+            <h3>{{post.title}}</h3>
+            <h5>{{post.created_at}}</h5>
+            <p>{{post.body|truncatewords:20}}</p>
+        </a>
+    </div>
+    {% endfor %}
 
-{% for post in allPosts reversed %}
-<div class="post">
-    <h3>{{post.title}}</h3>
-    <h5>{{post.created_at}}</h5>
-    <p>{{post.body}}</p>
-</div>
-{% endfor %}
 
 </div>

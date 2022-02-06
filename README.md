@@ -6,7 +6,7 @@
 django-admin startproject <project name>
 ```
 
-In the project directory, create a new app: 
+#### In the project directory, create a new app: 
 ```py 
 python manage.py startapp <app name>
 ```
